@@ -10,7 +10,7 @@ Below is a detailed breakdown of each script.
 Input: a CSV file that contains desired fields (e.g. phone, address) with each row being a different entity.
 Additionally, the last column must be a "special field" that contains the name of fields that were modified 
 by a human. This should be saved after running the crawler & human inspection as it allows `extract_divtag.py`
-to keep track of which fields to double check.
+to keep track of which fields to double check. `Resources.csv` is an example of such input file.
 
 Output: a JSON file that contains a set of tuples per each location ID. 
 A tuple contains:

@@ -15,7 +15,7 @@ to keep track of which fields need monitoring. `Resources.csv` is an example of 
 Output: a JSON file that contains a set of tuples per each location ID. 
 A tuple contains:
 1) The desired field 
-2) the HTML element corresponding to the field
+2) The HTML element corresponding to the field
 3) The content of the field
 
 This JSON file can ultimately be used at a future date to quickly check if the tracked fields have changed.

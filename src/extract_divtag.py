@@ -44,7 +44,7 @@ def main():
                     print('\nreturning divtag of: ' + field)
 
                     divtag = find_divtag(row[header.index('url')], str(modified_str))
-                    divtag_list.append((field, divtag))
+                    divtag_list.append((field, divtag, modified_str))
                     print(divtag)
             data[row[0]] = [divtag_list, row[header.index('url')]]
 

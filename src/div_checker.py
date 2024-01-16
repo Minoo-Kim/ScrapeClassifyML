@@ -30,9 +30,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-# todo:
-# add the additional fields
-# connect to github
-# do readme?

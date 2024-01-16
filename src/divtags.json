@@ -1,0 +1,46 @@
+{
+    "1": [
+        [
+            [
+                "address",
+                "<div class=\"header-section-copy__content\">\n<div class=\"header-section-lead rte\"><p>One Medical Plaza Drive, Roseville, CA 95661 | <span class=\"phone-number\">(916) 781-1000</span></p></div>\n</div>",
+                "One Medical Plaza Drive, Roseville, CA 95661"
+            ],
+            [
+                "phone",
+                "<span class=\"phone-number\">(916) 781-1000</span>",
+                "(916) 781-1000"
+            ]
+        ],
+        "https://www.sutterhealth.org/srmc"
+    ],
+    "2": [
+        [
+            [
+                "address",
+                "<div class=\"elementor-element elementor-element-bdc88a4 elementor-widget elementor-widget-text-editor\" data-element_type=\"widget\" data-id=\"bdc88a4\" data-widget_type=\"text-editor.default\"><div class=\"elementor-widget-container\"><p>10615 International Blvd,<br/>\nOakland, CA 94603<br/>\nTel: 510-835-9610</p></div></div>",
+                "10615 International Blvd,"
+            ]
+        ],
+        "https://westoaklandhealth.org/"
+    ],
+    "3": [
+        [
+            [
+                "name",
+                "<div class=\"media-left\">\n<img alt=\"Dr. Judith Friedman, MD Location\" class=\"media-object\" src=\"/images/d36143.png\"/>\n</div>",
+                "Dr. Judith Friedman, MD"
+            ],
+            [
+                "phone",
+                "<span itemprop=\"telephone\">415-713-6745</span>",
+                "415-713-6745"
+            ]
+        ],
+        "https://www.drughelpcenters.com/physician/judith-friedman"
+    ],
+    "4": [
+        [],
+        "https://www.sutterhealth.org/srmc/location-search?location-lat=38.7424319&location-lng=-121.2511908&location-auto=Roseville%2C+CA+95661&location-query=&location-area=Roseville%2C+CA+95661&location-distance=8.07&location-type=Birth+Centers&location-affiliate=Sutter+Roseville+Medical+Center"
+    ]
+}

@@ -1,5 +1,5 @@
 resource_id;name;address;phone;url;human_input
 1;Sutter Roseville Medical Center;One Medical Plaza Drive, Roseville, CA 95661;(916) 781-1000;https://www.sutterhealth.org/srmc;address,phone
 2;A.J. Thomas: Medi-Cal Clinic;10615 International Blvd,;(510) 835-9610;https://westoaklandhealth.org/;address
-3;Hoag Addiction Treatment Center - Newport Beach;1 Hoag Dr, Newport Beach, CA 92663;(888) 491-7124;https://www.hoag.org/specialties-services/neurosciences/programs/addiction-medicine/;phone
+3;Dr. Judith Friedman, MD;1036 Sir Francis Drake Boulevard;415-713-6745;https://www.drughelpcenters.com/physician/judith-friedman;name,phone
 4;Sutter Roseville Medical Center - Birth Center;1 Medical Plaza Dr, Lower Level, Roseville, CA 95661;(916) 781-1517;https://www.sutterhealth.org/srmc/location-search?location-lat=38.7424319&location-lng=-121.2511908&location-auto=Roseville%2C+CA+95661&location-query=&location-area=Roseville%2C+CA+95661&location-distance=8.07&location-type=Birth+Centers&location-affiliate=Sutter+Roseville+Medical+Center;

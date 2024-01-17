@@ -25,8 +25,8 @@ This JSON file can ultimately be used at a future date to quickly check if the t
 Input: a JSON file formatted as detailed above.
 
 Output: command line output(s) determining whether the content of the tracked fields remain the same or 
-if they're changed by an external host. This ultimately allows the internal system know whether to keep 
-the old information or to request additional human supervision.
+if they're changed by an external host. If the content is changed, the script automaitcally outputs the 
+new content which can be integrated with a crawler to reduce human supervision in "refresh updates".
 
 Note: all entities should be mapped through an ID
 

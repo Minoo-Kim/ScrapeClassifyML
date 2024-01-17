@@ -1,9 +1,27 @@
 import json
 import requests
 from bs4 import BeautifulSoup as bs
+from openai import OpenAI
+from dotenv import load_dotenv
+import os
+
+# access OpenAI API key
+load_dotenv()
+api_key = os.getenv("OPENAI_API_KEY")
 
 def extract_text(tag):
     return tag.get_text(strip=True)
+
+def validate_content(content, field):
+    # Use GPT API to analyze the text
+    client = OpenAI()
+    response = client.chat.completions.create(
+    messages=[
+        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": f"Is the following text a valid instance of the field '{field}'? '{content}'. If yes, output the same text. If a part of the string is valid, output only that part of the string. If no, output '[malformed tag, manually check]'"},
+    ],
+    model="gpt-3.5-turbo",)
+    return response.choices[0].message.content
 
 def checkDiv(url, divtags, id):
     response = requests.get(url)
@@ -21,9 +39,8 @@ def checkDiv(url, divtags, id):
                 prev_attr = bs(divtag[1], 'html.parser').find().attrs
                 curr_tag = soup.find(**prev_attr)
                 curr_content = extract_text(curr_tag)
-                if curr_content == "":
-                    curr_content = "[uncommon tag identified, manually check]"
-                print(divtag[0] + " for location ID " + id +  " is changed. Please update to " + curr_content)
+                curr_content_val = validate_content(curr_content, divtag[0])
+                print(divtag[0] + " for location ID " + id +  " is changed. Please update to " + curr_content_val)
     # http request failed
     else:
         print(f"Status code: {response.status_code}. Failed to retrieve content from {url}.")

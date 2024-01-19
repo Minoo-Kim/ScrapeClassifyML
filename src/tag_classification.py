@@ -1,10 +1,9 @@
 import csv
-import json
 import requests
 from bs4 import BeautifulSoup as bs
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn import svm
-from sklearn.model_selection import train_test_split, cross_val_score, KFold
+from sklearn.model_selection import train_test_split, cross_val_score, StratifiedKFold
 from sklearn.metrics import accuracy_score
 import pandas as pd
 
@@ -44,7 +43,7 @@ def clean_csv():
 
 def train_svm_model(x, y):
     # Manually split the data into 70% training and 30% testing
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=42)
 
     # Create an SVM classifier
     svm_classifier = svm.SVC(kernel='linear', C=1)
@@ -58,12 +57,10 @@ def train_svm_model(x, y):
     # Print the accuracy scores for each fold
     for fold, accuracy in enumerate(accuracy_scores, start=1):
         print(f'Fold {fold}: Accuracy = {accuracy:.2f}')
-
-    # Calculate and print the average accuracy across all folds
     average_accuracy = accuracy_scores.mean()
     print(f'Average Accuracy: {average_accuracy:.2f}')
 
-    # Now you can train and evaluate the model on the test set
+    # train and evaulate model
     svm_classifier.fit(X_train, y_train)
     test_accuracy = svm_classifier.score(X_test, y_test)
     print(f'Test Accuracy: {test_accuracy:.2f}')
@@ -132,10 +129,8 @@ def main():
         for i in range(len(html_features)):
             feature_matrix.append(html_features[i] + df_ordered[i])
 
+        # train/test support vector machine
         train_svm_model(feature_matrix, field_label)
-
-
-
 
 if __name__ == "__main__":
     main()

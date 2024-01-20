@@ -30,6 +30,14 @@ new content which can be integrated with a crawler to reduce human supervision i
 
 Note: all entities should be mapped through an ID
 
+## tag_svm.ipynb
+
+This file contains all the code for the main support vector machine ML model. The model takes labeled
+input generated in a similar matter to `extract_divtag.py`. Features are extracted from the raw HTML
+tag (raw text, tag attributes, text content) and vectorized approporiately. Large features like count-vectorized
+HTML tags are ran through PCA to reduce runtime. After hyperparameter tuning, the model reaches ~90% classification
+accruacy.
+
 
 
 

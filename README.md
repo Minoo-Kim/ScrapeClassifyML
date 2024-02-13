@@ -12,6 +12,9 @@ Additionally, the last column must be a "special field" that contains the name o
 by a human. This should be saved after running the crawler & human inspection as it allows `extract_divtag.py`
 to keep track of which fields need monitoring. `Resources.csv` is an example of such input file.
 
+General Note: If the file contains a specific URL that's expired/altered, the file will crash. 
+Please ensure that the scraped URL in the input file is upto date and accesible.
+
 Output: a JSON file that contains a set of tuples per each location ID. 
 A tuple contains:
 1) The desired field 
@@ -33,11 +36,15 @@ Note: all entities should be mapped through an ID
 ## tag_svm.ipynb
 
 This file contains all the code for the main support vector machine ML model. The model takes labeled
-input generated in a similar matter to `extract_divtag.py`. Features are extracted from the raw HTML
-tag (raw text, tag attributes, text content) and vectorized approporiately. Large features like count-vectorized
-HTML tags are ran through PCA to reduce runtime. After hyperparameter tuning, the model reaches ~90% classification
-accruacy.
+input generated in a similar matter to `extract_divtag.py`. Features are extracted from the text content
+within the HTML tag. Features relating to tag attributes and HTML structure proved to have litte to no 
+predictive potential (so they're removed from the model). After hyperparameter tuning, the model reaches 
+95%+ classification accruacy.
 
 
+TODO:
 
+handle edge case for non-existing data that was human inputted (implementation: have a specific flag for this case)
 
+svm: categorize with one hot encoding
+make more features on the content (hyphens, str length, data type, etc)

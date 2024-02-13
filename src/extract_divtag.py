@@ -3,6 +3,7 @@ import json
 import requests
 from bs4 import BeautifulSoup as bs
 
+# write descriptive message for "None"
 def find_divtag(url, input_text):
     response = requests.get(url)
 

@@ -46,5 +46,4 @@ TODO:
 
 handle edge case for non-existing data that was human inputted (implementation: have a specific flag for this case)
 
-svm: categorize with one hot encoding
-make more features on the content (hyphens, str length, data type, etc)
+svm: make more features on the content (hyphens, str length, data type, etc)

@@ -40,10 +40,3 @@ input generated in a similar matter to `extract_divtag.py`. Features are extract
 within the HTML tag. Features relating to tag attributes and HTML structure proved to have litte to no 
 predictive potential (so they're removed from the model). After hyperparameter tuning, the model reaches 
 95%+ classification accruacy.
-
-
-TODO:
-
-handle edge case for non-existing data that was human inputted (implementation: have a specific flag for this case)
-
-svm: make more features on the content (hyphens, str length, data type, etc)
